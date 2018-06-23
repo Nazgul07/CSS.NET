@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CSS.NET</id>
+    <version>1.0.0</version>
+    <title>CSS.NET</title>
+    <authors>Colton Correll</authors>
+    <owners>Colton Correll</owners>
+    <licenseUrl>https://github.com/Nazgul07/CSS.NET/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Nazgul07/CSS.NET</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library for applying CSS styles to Windows Desktop applications (Winforms, WPF)</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>CSS .NET WinForms WPF</tags>
+  </metadata>
+</package>

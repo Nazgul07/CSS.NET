@@ -62,6 +62,7 @@
     <Compile Include="WpfControlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSS.NET.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

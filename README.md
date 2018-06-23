@@ -23,7 +23,7 @@ public Form1()
 }
 ```
 
-### Using Tag (class name) selectors:
+### Using Tag (Control Type) selectors:
 ```csharp
 public Form1()
 {

@@ -1,5 +1,5 @@
 # CSS.NET
-A library for applying CSS styles to Windows Desktop applications (Winforms, WPF)
+A library for applying CSS-like styles to Windows Desktop applications (Winforms, WPF)
 
 Style your Windows Desktop applications using CSS.
 

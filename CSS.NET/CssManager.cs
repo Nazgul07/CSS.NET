@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using CSSParser;
@@ -24,15 +26,45 @@ namespace CSS.NET
 			ApplyInternal(window, cssString);
 		}
 
-		/// <summary>
-		/// Apply a CSS string to a Form.
-		/// </summary>
-		/// <param name="form">The form to apply to.</param>
-		/// <param name="cssString">The CSS content.</param>
-		public static void ApplyFormCss(this Form form, string cssString)
+        /// <summary>
+        /// Apply styles from a css files
+        /// </summary>
+        /// <param name="window">The window to apply to.</param>
+        /// <param name="cssContent">CSS file where styles are held</param>
+        public static async Task ApplyWindowCss(this Window window, FileStream cssContent)
+	    {
+	        if (Path.GetExtension(cssContent.Name) != "css")
+	        {
+	            return;
+	        }
+	        using (var reader = new StreamReader(cssContent))
+	            ApplyWindowCss(window, await reader.ReadToEndAsync());
+	    }
+
+        /// <summary>
+        /// Apply a CSS string to a Form.
+        /// </summary>
+        /// <param name="form">The form to apply to.</param>
+        /// <param name="cssString">The CSS content.</param>
+        public static void ApplyFormCss(this Form form, string cssString)
 		{
 			ApplyInternal(form, cssString);
 		}
+
+        /// <summary>
+        /// Apply styles from a css files
+        /// </summary>
+        /// <param name="form">From where styles will be applied</param>
+        /// <param name="cssContent">CSS file where styles are held</param>
+	    public static async Task ApplyFormCss(this Form form, FileStream cssContent)
+        {
+            if (Path.GetExtension(cssContent.Name) != "css")
+            {
+                return;
+            }
+            using (var reader = new StreamReader(cssContent))
+                ApplyFormCss(form, await reader.ReadToEndAsync());
+        }
 
 		/// <summary>
 		/// Apply a CSS string to a control.

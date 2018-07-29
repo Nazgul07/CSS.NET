@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Media;
 
 namespace CSS.NET
@@ -17,9 +13,8 @@ namespace CSS.NET
 				for (int i = 0; i < count; i++)
 				{
 					// Retrieve child visual at specified index value.
-					var child = VisualTreeHelper.GetChild(parent, i) as Visual;
 
-					if (child != null)
+				    if (VisualTreeHelper.GetChild(parent, i) is Visual child)
 					{
 						yield return child;
 
